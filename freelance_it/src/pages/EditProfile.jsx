@@ -156,9 +156,6 @@ const EditProfile = () => {
 
   return (
     <div className="profile-page">
-  {/* Background Images */}
-  <img src="/imagef6.png" alt="Top Left" className="bg-image-top-left" />
-  <img src="/imagef7.png" alt="Bottom Right" className="bg-image-bottom-right" />
 
   <div className="profile-container">
     <h1>Edit Profile</h1>

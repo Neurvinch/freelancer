@@ -12,10 +12,10 @@
 
 /* Form Styling */
 .form-containerrr {
-    background: #3b3b3b; /* Dark Gray */
+    background-color: #1a1a1a; /* Dark Gray */
     padding: 30px;
     border-radius: 15px;
-    box-shadow: rgba(255, 115, 0, 0.5) 0px 10px 30px;
+    box-shadow: rgba(97, 82, 69, 0.5) 0px 10px 30px;
     width: 400px;
     text-align: center;
     transition: transform 0.3s ease-in-out;
@@ -69,41 +69,3 @@
     margin-bottom: 10px;
 }
 
-/* Submit Button */
-.submit-button {
-    width: 100%;
-    padding: 12px;
-    margin-top: 20px;
-    background: linear-gradient(45deg, #ff8400, #ff5500);
-    border: none;
-    border-radius: 8px;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Glowing Effect on Hover */
-.submit-button:hover {
-    background: linear-gradient(45deg, #ff5500, #ff8400);
-    box-shadow: 0 0 15px #ff5500, 0 0 40px #ff8400;
-    transform: scale(1.05);
-}
-
-/* Shake Animation on Click */
-.submit-button:active {
-    animation: shake 0.2s ease-in-out;
-    background: linear-gradient(45deg, #ff3d00, #ff8400);
-}
-
-/* Keyframes for Shake Effect */
-@keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-4px); }
-    50% { transform: translateX(4px); }
-    75% { transform: translateX(-4px); }
-    100% { transform: translateX(0); }
-}

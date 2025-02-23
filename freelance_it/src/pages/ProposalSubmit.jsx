@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
-
+import './ProposalSubmit.css'
 const ProposalSubmit = () => {
       const {jobId} =   useParams();
 
@@ -45,7 +45,8 @@ const ProposalSubmit = () => {
           }
         }
   return (
-    <div>
+    <div className="proposal-container">
+    <div className="proposal-form-container">
         <h1>Submit Proposal</h1>
         <form onSubmit={handleSubmit}>
             <label>Proposal Text:</label>
@@ -59,10 +60,15 @@ const ProposalSubmit = () => {
                 value={proposalAmount}
                 onChange={(e) => setProposalAmount(e.target.value)}
             />
-            <button type='submit' >Submit Proposal</button>
+            <button  className="btn btn--full margin-right-sm" type='submit'>Submit Proposal</button>
         </form>
     </div>
+    <div className="proposal-image">
+        <img src="/imagef5.png" alt="Proposal Illustration" />
+    </div>
+</div>
+
+   
   )
 }
-
 export default ProposalSubmit
