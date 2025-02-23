@@ -82,3 +82,28 @@ exports.updateProposal = async(req,res) =>{
         })
     }
 }
+
+exports.getSingleProposalById = async(Req ,res) =>{
+    try {
+        const proposal = await ProposalModel.findById(Req.params.id)
+        .populate("freelancer" , "name email")
+        .populate("job" , "title description")
+
+        if(!proposal){
+            return res.status(404).json({
+                success : false,
+                message : "Proposal not found"
+                })
+        }
+         res.status(200).json({
+            success : true,
+            proposal
+            })
+        
+    } catch (error) {
+        res.status(500).json({
+            success : false,
+            message : error.message
+        })
+    }
+}
