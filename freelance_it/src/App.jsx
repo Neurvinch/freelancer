@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes , Route} from 'react-router-dom'
+import { BrowserRouter as Router, Routes , Route, useLocation} from 'react-router-dom'
 import './App.css'
 import Register from './pages/Auth/Register'
 import Login from './pages/Auth/Login'
@@ -13,18 +13,24 @@ import ProposalList from './pages/ProposalList'
 import ProposalEdit from './pages/Freelancer/ProposalEdit'
 import ClientProposal from './pages/Client/ClientProposal'
 import MyJobs from './pages/Client/MyJobs'
+import Signout from './pages/Auth/Signout'
+import NavBar from './pages/NAvBar'
 
-function App() {
+
+function AppContent() {
+  const location = useLocation();
+  const hideNavBarRoutes = ['/login', '/register' ,'/'];
     
   return (
 
     <>
-    <Router>
+              {!hideNavBarRoutes.includes(location.pathname) && <NavBar />}
       <Routes>
         
         <Route  path='/'  element ={<HomePage/>}    />
         <Route path='/register' element = {<Register/>}     />
         <Route path='/login' element = {<Login/>}     />
+        <Route   path='/signout' element = {<Signout/>} />
 
             <Route  path='/profile'  element = {<Profile/>}  />
             <Route   path='/editProfile' element = {<EditProfile/>}  />
@@ -46,10 +52,18 @@ function App() {
        <Route    path='/jobs/:jobId/proposal' element = {<ProposalList/>}  />
        <Route    path='/proposal/:id/edit' element = {<ProposalEdit/>} />
       </Routes>
-    </Router>
+   
       
     </>
   )
 }
+
+   function App (){
+    return (
+      <Router>
+        <AppContent/>
+      </Router>
+    )
+   }
 
 export default App
