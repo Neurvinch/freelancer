@@ -1,5 +1,5 @@
 import React, { useEffect , useState } from 'react'
-
+import './ClientProposal.css'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 const ClientProposal = () => {
@@ -39,14 +39,15 @@ const ClientProposal = () => {
 
 
   return (
-    <div className="p-6">
-    <h2 className="text-2xl font-bold mb-4">Proposals for this Job</h2>
+    <div className="proposals-container">
+    <img src="/imagef7.png" alt="Proposals" className="proposals-image" />
+    <h2>Proposals for this Job</h2>
     {proposals.length === 0 ? (
-      <p>No proposals submitted yet.</p>
+      <p className="no-proposals">No proposals submitted yet.</p>
     ) : (
-      <ul>
+      <ul className="proposals-list">
         {proposals.map((proposal) => (
-          <li key={proposal._id} className="border p-4 mb-2">
+          <li key={proposal._id} className="proposal-item">
             <p><strong>Freelancer:</strong> {proposal.freelancer.name}</p>
             <p><strong>Proposed Amount:</strong> ${proposal.proposedAmount}</p>
             <p>{proposal.proposalText}</p>
@@ -54,7 +55,9 @@ const ClientProposal = () => {
         ))}
       </ul>
     )}
-  </div>
+</div>
+
+
   )
 }
 

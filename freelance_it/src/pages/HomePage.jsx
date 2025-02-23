@@ -19,12 +19,12 @@ const HomePage = () => {
             <a href="#how" className="btn btn--outline">Learn more &darr;</a>
             <div className="delivered-meals">
               <div className="delivered-imgs">
-                <img src="img/customers/customer-1.jpg" alt="Customer photo" />
-                <img src="img/customers/customer-2.jpg" alt="Customer photo" />
-                <img src="img/customers/customer-3.jpg" alt="Customer photo" />
-                <img src="img/customers/customer-4.jpg" alt="Customer photo" />
-                <img src="img/customers/customer-5.jpg" alt="Customer photo" />
-                <img src="img/customers/customer-6.jpg" alt="Customer photo" />
+                <img src="/im1.jpg" alt="Customer photo" />
+                <img src="/im2.jpg" alt="Customer photo" />
+                <img src="/im3.jpg" alt="Customer photo" />
+                <img src="/im4.jpg" alt="Customer photo" />
+                <img src="/img5.jpg" alt="Customer photo" />
+                <img src="/img6.jpg" alt="Customer photo" />
               </div>
               <p className="delivered-text">
                 <span>Join!</span> without worry..
@@ -48,8 +48,8 @@ const HomePage = () => {
         <div className="container">
           <h2 className="heading-featured-in">As featured in</h2>
           <div className="logos">
-            <img src="/imagef5.png" alt="Techcrunch logo" />
-            <img src="img/logos/business-insider.png" alt="Business Insider logo" />
+            <img src="/f1.webp" alt="Techcrunch logo" />
+            <img src="/f2.png" alt="Business Insider logo" />
             <img src="img/logos/the-new-york-times.png" alt="The New York Times logo" />
             <img src="img/logos/forbes.png" alt="Forbes logo" />
             <img src="img/logos/usa-today.png" alt="USA Today logo" />
