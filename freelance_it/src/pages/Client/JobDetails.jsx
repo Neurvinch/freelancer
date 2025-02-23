@@ -67,8 +67,33 @@ const JobDetails = () => {
 
 
   return (
-    <div className="job-details-container">
-  <h1>Job Details</h1>
+    <div >
+        <h1>Job Details</h1>
+          
+          <h2>{jobs.title}</h2>
+          <p>{jobs.description}</p>
+          <p>${jobs.budget}</p>
+          <p>{jobs.status}</p>
+
+          <div>
+            <label>Update Status:</label>
+              <select  value={status}
+               onChange={(e) => setStatus(e.target.value)}
+               >
+                <option value="open">open</option>
+                <option value="in Progress">In Progress</option>
+                <option value="completed">Completed</option>
+              </select>
+               <button  onClick={handleUpdate}  >Update</button>
+                     
+                     
+                     <button onClick={handleDelete}>Delete Job</button>
+          </div>
+
+          <Link  to={`/jobs/${jobs._id}/proposal/new`} >
+          Submit Proposal
+          </Link>
+          
 
   <div className="job-info">
     <h2>{jobs.title}</h2>

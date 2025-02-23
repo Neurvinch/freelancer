@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../assets/left.png'; // Importing image
+import '../../assets/left.png'; // Importing image
 import './FetchJobList.css';
 
 const FetchJobList = () => {
