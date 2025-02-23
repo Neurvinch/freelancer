@@ -30,6 +30,9 @@ function App() {
 
 
         <Route  path ="/job-create"  element={<JobPost/>}      />
+        <Route  path='/profile'  element = {<Profile/>}  />
+        <Route   path='/editProfile' element = {<EditProfile/>}  />
+        <Route   path='/jobs' element={<FetchJobList/>}     />
         <Route   path='/jobs/:id' element = {<JobDetails/>}    />
 
 
