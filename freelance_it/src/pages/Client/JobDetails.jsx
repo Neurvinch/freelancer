@@ -86,10 +86,7 @@ const JobDetails = () => {
               </select>
                <button  onClick={handleUpdate}  >Update</button>
                      
-                     <div>
-                        <Link to ={`jobs/update/${jobs._id}`}> Edit Job </Link>
-                     </div>
-
+                     
                      <button onClick={handleDelete}>Delete Job</button>
           </div>
 
