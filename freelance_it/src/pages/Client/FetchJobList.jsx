@@ -1,74 +1,53 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
-import '../../assets/left.png'; // Importing image
-import './FetchJobList.css';
-
+import './FetchJobList.css'
 const FetchJobList = () => {
-    const [jobs, setJobs] = useState([]);
-    const [filter, setFilter] = useState('');
-    const [search, setSearch] = useState('');
-    const [sort, setSort] = useState('budget');
 
-    useEffect(() => {
-        axios.get(`http://localhost:5000/api/jobs?filter=${filter}&sort=${sort}`)
-            .then((res) => setJobs(res.data.jobs))
-            .catch((err) => console.log(err));
-    }, [filter, sort]);
+    const [jobs ,setJobs] = useState([]);
+    const [filter , setFilter] = useState("");
+    const[sort ,setSort] = useState("budget");
 
-    return (
-        <div className="job-container">
-            {/* Job Heading */}
-            <h2 className="job-heading">Available Jobs</h2>
+     
+    useEffect( () =>{
+        axios.get(`http://Localhost:5000/api/jobs?filter=${filter}&sort=${sort}`)
+        .then( (res) => setJobs(res.data.jobs))
+        .catch( (err) => console.log(err))
+    },[filter,sort]);
+     
 
-            {/* Filter Input */}
-            <div className="input-wrapper">
-                <input
-                    type="text"
-                    className="animated-input"
-                    placeholder=" "
-                    value={filter}
-                    onChange={(e) => setFilter(e.target.value)}
-                />
-                <label>Filter by Category</label>
-            </div>
+  return (
+    <div className="job-list-container">
+            <h2 className="job-list-title">Job List</h2>
 
-            {/* Search Input */}
-            <div className="input-wrapper">
-                <input
-                    type="text"
-                    className="animated-input"
-                    placeholder=" "
-                    value={search}
-                    onChange={(e) => setSearch(e.target.value)}
-                />
-                <label>Search Jobs</label>
-            </div>
+            <input
+                type="text"
+                className="job-filter-input"
+                placeholder="Filter by category"
+                value={filter}
+                onChange={(e) => setFilter(e.target.value)}
+            />
 
-            {/* Sort Dropdown */}
-            <div className="input-wrapper">
-                <select
-                    className="animated-select black-select"
-                    value={sort}
-                    onChange={(e) => setSort(e.target.value)}
-                >
-                    <option value="budget">Sort by Budget</option>
-                    <option value="createdAt">Sort by Date</option>
-                </select>
-            </div>
+            <select
+                className="job-sort-select"
+                value={sort}
+                onChange={(e) => setSort(e.target.value)}
+            >
+                <option value="budget">Sort by Budget</option>
+                <option value="createdAt">Sort by Date</option>
+            </select>
 
-            {/* Job List */}
             <ul className="job-list">
                 {jobs.map((job) => (
                     <li key={job._id} className="job-item">
                         <Link to={`/jobs/${job._id}`} className="job-link">
-                            {job.title} - <span className="job-budget">${job.budget}</span> ({job.status})
+                            {job.title} - ${job.budget} ({job.status})
                         </Link>
                     </li>
                 ))}
             </ul>
         </div>
     );
-};
+}
 
-export default FetchJobList;
+export default FetchJobList
