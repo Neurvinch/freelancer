@@ -15,6 +15,7 @@ const FetchJobList = () => {
             .then((res) => setJobs(res.data.jobs))
             .catch((err) => console.log(err));
     }, [filter, sort]);
+    console.log(jobs);
 
     return (
         <div className="job-container">
