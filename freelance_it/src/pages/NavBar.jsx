@@ -38,7 +38,6 @@ const NavBar = () => {
                 <Link to="/profile" > Profile</Link>
                   <Link to= "/job-create" >Create Job</Link>  
                   <Link to= "/jobs" > Jobs</Link>
-
                   <Link to= "/client/jobs" > My Jobs</Link>
                   <Link to= "/jobs/:id/proposal"  > My Jobs's Proposals </Link>
                   <Link to="/signout" onClick={handleSignout}> Signout</Link>
@@ -50,7 +49,9 @@ const NavBar = () => {
             return (
                 <>
                   <Link to= "/profile" >Profile</Link>
-                  <
+                  <Link to= "/jobs" >Jobs</Link>
+                  <Link to="/jobs/:id/proposal/new" > </Link>
+                  
                 
                 </>
             )
