@@ -8,7 +8,7 @@ exports.createProposal = async (req, res) =>{
 
         const {proposalText , proposalAmount} = req.body;
 
-        const freelanncer = req.user.id || req.user._id
+        const freelancer = req.user.id || req.user._id
 
 
         const newproposal = new ProposalModel({
@@ -23,7 +23,8 @@ exports.createProposal = async (req, res) =>{
 
         res.status(200).json({
             success : true,
-            savedProposal   
+            savedProposal ,
+            message : "Proposal created successfully"
         })
 
         

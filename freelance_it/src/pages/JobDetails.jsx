@@ -92,6 +92,10 @@ const JobDetails = () => {
 
                      <button onClick={handleDelete}>Delete Job</button>
           </div>
+
+          <Link  to={`/jobs/${jobs._id}/proposal/new`} >
+          Submit Proposal
+          </Link>
           
 
 

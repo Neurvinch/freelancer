@@ -8,6 +8,7 @@ import Profile from './pages/Profile'
 import EditProfile from './pages/EditProfile'
 import FetchJobList from './pages/FetchJobList'
 import JobDetails from './pages/JobDetails'
+import ProposalSubmit from './pages/ProposalSubmit'
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
         <Route   path='/editProfile' element = {<EditProfile/>}  />
         <Route   path='/jobs' element={<FetchJobList/>}     />
         <Route   path='/jobs/:id' element = {<JobDetails/>}    />
+        <Route   path='/jobs/:jobId/proposal/new' element = {<ProposalSubmit/>}  />
 
       </Routes>
     </Router>
