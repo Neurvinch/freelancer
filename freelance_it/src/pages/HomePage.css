@@ -89,11 +89,13 @@ body{
   .logos {
     display: flex;
     justify-content: space-around;
+    
   }
   
   .logos img {
     height: 80px;
     opacity: 50%;
+    margin-left: 50px;
   }
   
   .section-how {

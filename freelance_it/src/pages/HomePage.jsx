@@ -50,9 +50,9 @@ const HomePage = () => {
           <div className="logos">
             <img src="/f1.webp" alt="Techcrunch logo" />
             <img src="/f2.png" alt="Business Insider logo" />
-            <img src="img/logos/the-new-york-times.png" alt="The New York Times logo" />
-            <img src="img/logos/forbes.png" alt="Forbes logo" />
-            <img src="img/logos/usa-today.png" alt="USA Today logo" />
+            <img src="/f3.png" alt="The New York Times logo" />
+            <img src="/f4.png" alt="Forbes logo" />
+            <img src="/f5.png" alt="USA Today logo" />
           </div>
         </div>
       </section>
