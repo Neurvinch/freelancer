@@ -1,11 +1,12 @@
 import React,{ useState, useEffect} from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { jwtDecode} from "jwt-decode"
 
 
 const NavBar = () => {
     const [role, setRole] = useState('');
     const navigate = useNavigate();
+   const {id} = useParams();
 
     useEffect ( () =>{
         const token = localStorage.getItem('token');
@@ -48,7 +49,7 @@ const NavBar = () => {
                   <Link to= "/job-create" >Create Job</Link>  
                   <Link to= "/jobs" > Jobs</Link>
                   <Link to= "/client/jobs" > My Jobs</Link>
-                  <Link to= "/jobs/:id/proposal"  > My Jobs's Proposals </Link>
+                  <Link to= {`/client/jobs/${id}/proposal`}  > My Jobs's Proposals </Link>
                   <Link to="/signout" onClick={handleSignout}> Signout</Link>
                 </>
             )
