@@ -11,6 +11,7 @@ import JobDetails from './pages/Client/JobDetails'
 import ProposalSubmit from './pages/Freelancer/ProposalSubmit'
 import ProposalList from './pages/ProposalList'
 import ProposalEdit from './pages/Freelancer/ProposalEdit'
+import ClientProposal from './pages/Client/ClientProposal'
 
 function App() {
     
@@ -30,8 +31,8 @@ function App() {
 
 
         <Route  path ="/job-create"  element={<JobPost/>}      />
-        <Route  path='/profile'  element = {<Profile/>}  />
-        <Route   path='/editProfile' element = {<EditProfile/>}  />
+       <Route  path='/client/jobs/:id/proposal'  element = {<ClientProposal/>}  />
+        
         <Route   path='/jobs' element={<FetchJobList/>}     />
         <Route   path='/jobs/:id' element = {<JobDetails/>}    />
 
