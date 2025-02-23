@@ -44,7 +44,7 @@ const MyJobs = () => {
           <ul>
             {jobs.map((job) => (
               <li key={job._id} className="border p-4 mb-2">
-                <Link to={`/client/jobs/${job._id}`} className="text-blue-600">
+                <Link to={`/jobs/${job._id}`} className="text-blue-600">
                   {job.title} - ${job.budget}
                 </Link>
               </li>
