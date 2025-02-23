@@ -1,0 +1,66 @@
+.my-jobs-container {
+    background-color: #2a2a2a;
+    padding: 120px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .my-jobs-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #fdfdfd;
+    margin-bottom: 16px;
+  }
+  
+  .no-jobs-text {
+    font-size: 1rem;
+    color: #777;
+  }
+  
+  .jobs-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .job-item {
+    border: 1px solid #ddd;
+    padding-left: 36px;
+    padding-right: 36px;
+    padding-top: 26px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    background-color: #ff991d;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  
+  .job-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .job-link {
+    color: #fcfcfc;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 600px) {
+    .my-jobs-container {
+      padding: 106px;
+      width: 100%;
+    }
+  
+    .my-jobs-title {
+      font-size: 4.25rem;
+    }
+  
+    .job-item {
+      padding: 12px;
+    }
+  }
+  

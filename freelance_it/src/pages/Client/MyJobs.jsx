@@ -1,7 +1,7 @@
 import React , { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import axios from 'axios';
-
+import './MyJobs.css'
 
 const MyJobs = () => {
     const [jobs, setJobs] = useState([]);
@@ -36,22 +36,23 @@ const MyJobs = () => {
     if (error) return <p>{error}</p>;
   
     return (
-      <div className="p-6">
-        <h2 className="text-2xl font-bold mb-4">My Jobs</h2>
-        {jobs.length === 0 ? (
-          <p>You haven't posted any jobs yet.</p>
-        ) : (
-          <ul>
-            {jobs.map((job) => (
-              <li key={job._id} className="border p-4 mb-2">
-                <Link to={`/jobs/${job._id}`} className="text-blue-600">
-                  {job.title} - ${job.budget}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
+      <div className="my-jobs-container">
+      <h2 className="my-jobs-title">My Jobs</h2>
+      {jobs.length === 0 ? (
+        <p className="no-jobs-text">You haven't posted any jobs yet.</p>
+      ) : (
+        <ul className="jobs-list">
+          {jobs.map((job) => (
+            <li key={job._id} className="job-item">
+              <Link to={`/jobs/${job._id}`} className="job-link">
+                {job.title} - ${job.budget}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+  </div>
+  
   )
 }
 
