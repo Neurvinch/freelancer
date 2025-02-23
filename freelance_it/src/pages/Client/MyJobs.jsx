@@ -1,5 +1,6 @@
-import React from 'react'
+import React , { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
+import axios from 'axios';
 
 
 const MyJobs = () => {
@@ -8,21 +9,27 @@ const MyJobs = () => {
     const [error, setError] = useState("");
   
     useEffect(() => {
+
+        const fetchJobs = async () => {
+            
+        
         const token = localStorage.getItem('token');
         if(!token) {
             return navigate('/login');
         }
-        const responsefetch = axios.get("/client/jobs")
-        .then((res) => {
-          setJobs(res.data.jobs);
-          setLoading(false);
+        const res = await axios.get("http://localhost:5000/api/client/jobs",{
+            headers: {
+                'Authorization': `Bearer ${token}`
+                },
+                withCredentials: true
         })
-        .catch((err) => {
-          console.error(err);
-          setError("Error fetching jobs");
-          setLoading(false);
-        });
-        responsefetch();
+        setJobs(res.data.jobs);
+        setLoading(false);
+
+       
+        
+        }
+        fetchJobs();
     }, []);
   
     if (loading) return <p>Loading your jobs...</p>;

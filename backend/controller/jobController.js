@@ -150,3 +150,24 @@ exports.deleteJob = async (req ,res) =>{
         })
     }
 };
+
+exports.getMyJobs = async(req,res) =>{
+    try {
+
+        const client = req.user.id || req.user._id
+
+        const jobs = await jobCreationModel.find({client}).sort({createdAt: -1})
+
+        res.status(200).json({
+            message : "Jobs fetched successfully",
+            success : true,
+            jobs
+        })        
+    } catch (error) {
+         res.status(400).json({
+            message : error.message,
+            success : false
+            })
+            
+    }
+}

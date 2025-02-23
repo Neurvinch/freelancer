@@ -13,4 +13,6 @@ router.put("/jobs/:id", identifer(['client']) , updateJob);
 
 router.delete("/jobs/:id" , identifer(["client"]) , deleteJob);
 
+router.get("/client/jobs", identifer(["client"]) , getJobs);
+
 module.exports = router;
