@@ -1,0 +1,171 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #1e1e1e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Job Container - Blur Background */
+.job-container {
+    width: 380px;
+    max-width: 90%;
+    height: 320px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: rgba(255, 115, 0, 0.5) 0px 10px 30px;
+    text-align: center;
+    position: relative;
+    background: url("../assets/left.png") no-repeat center;
+    background-size: cover;
+    backdrop-filter: blur(6px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Job Heading - Glowing Effect */
+.job-heading {
+    font-size: 22px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #ff8400, 0 0 20px #ff5500;
+}
+
+/* Input & Dropdown Container */
+.input-wrapper {
+    position: relative;
+    width: 90%;
+    margin: 10px auto;
+}
+
+/* Transparent Inputs & Dropdown (All Same Size) */
+.animated-input,
+.animated-select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    background: transparent; /* Fully Transparent */
+    color: black; /* Black Text */
+    font-size: 14px;
+    text-align: center;
+    transition: all 0.4s ease-in-out;
+    outline: none;
+    backdrop-filter: blur(5px);
+    appearance: none;
+    cursor: pointer;
+}
+
+/* Floating Label */
+.input-wrapper label {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+/* Floating Label Effect */
+.animated-input:focus + label,
+.animated-input:not(:placeholder-shown) + label {
+    top: 5px;
+    font-size: 12px;
+    color: black;
+}
+
+/* Focus Animation */
+.animated-input:focus,
+.animated-select:focus {
+    border-color: #ff8400;
+    box-shadow: 0 0 10px #ff8400;
+    transform: scale(1.07);
+}
+
+/* Job List */
+.job-list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    max-height: 100px;
+    overflow-y: auto;
+}
+
+/* Job Item */
+.job-item {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Job Link */
+.job-link {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+/* Hover Effect on Job Item */
+.job-item:hover {
+    background: #ff8400;
+    color: black;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .job-container {
+        width: 100%;
+        max-width: 340px;
+        height: auto;
+        padding: 15px;
+    }
+
+    .job-heading {
+        font-size: 18px;
+    }
+
+    .animated-input,
+    .animated-select {
+        font-size: 14px;
+        padding: 14px;  /* Keep input boxes equal */
+    }
+
+    .input-wrapper label {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .job-container {
+        max-width: 300px;
+        padding: 10px;
+    }
+
+    .job-heading {
+        font-size: 16px;
+    }
+
+    .animated-input,
+    .animated-select {
+        font-size: 12px;
+        padding: 12px;
+    }
+
+    .input-wrapper label {
+        font-size: 12px;
+    }
+}

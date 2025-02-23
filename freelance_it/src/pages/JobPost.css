@@ -1,15 +1,17 @@
 /* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-
-/* Centered Form Container */
-.job-post-container {
+/* Centered Job List Container */
+.job-list-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 100vh;
+    background: #2c2c2c; /* Darker Background */
 }
 
+<<<<<<< HEAD
 /* Form Styling */
 .form-containerrr {
     background-color: #1a1a1a; /* Dark Gray */
@@ -17,45 +19,51 @@
     border-radius: 15px;
     box-shadow: rgba(97, 82, 69, 0.5) 0px 10px 30px;
     width: 400px;
+=======
+/* Job List Box */
+.job-list-box {
+    background: #3b3b3b; /* Dark Gray */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: rgba(255, 115, 0, 0.5) 0px 10px 30px;
+    width: 450px;
+>>>>>>> df4324f15c9d3b7d126df895406cea686cb0332d
     text-align: center;
     transition: transform 0.3s ease-in-out;
+    position: relative;
 }
 
-/* Subtle Hover Effect on Form */
-.form-container:hover {
+/* Hover Effect */
+.job-list-box:hover {
     transform: scale(1.02);
 }
 
 /* Heading */
 .heading {
-    font-size: 30px;
+    font-size: 28px;
     font-weight: 600;
     color: #ff8400; /* Orange */
     margin-bottom: 20px;
 }
 
-/* Input Fields */
-.input {
-    width: 90%;
-    padding: 12px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 8px;
+/* Job Item */
+.job-item {
     background: #4a4a4a;
     color: white;
-    font-size: 16px;
-    font-weight: 400;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
     transition: all 0.3s ease-in-out;
 }
 
-/* Input Focus Animation */
-.input:focus {
-    outline: none;
+/* Hover Effect */
+.job-item:hover {
     background: #5a5a5a;
     box-shadow: 0 0 10px #ff8400;
     transform: scale(1.05);
 }
 
+<<<<<<< HEAD
 /* Error and Success Messages */
 .error-message {
     color: red;
@@ -69,3 +77,54 @@
     margin-bottom: 10px;
 }
 
+=======
+/* View Details Button */
+.view-button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background: linear-gradient(45deg, #ff8400, #ff5500);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Effect */
+.view-button:hover {
+    background: linear-gradient(45deg, #ff5500, #ff8400);
+    box-shadow: 0 0 15px #ff5500, 0 0 40px #ff8400;
+    transform: scale(1.05);
+}
+
+/* Keyframes for Shake Effect */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    50% { transform: translateX(4px); }
+    75% { transform: translateX(-4px); }
+    100% { transform: translateX(0); }
+}
+
+/* Image Positioned at Bottom-Right */
+.bottom-right-image {
+    position: absolute;
+    right: -80px;
+    bottom: -50px;
+    width: 150px;
+    height: auto;
+    opacity: 0.8;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect for Image */
+.bottom-right-image:hover {
+    transform: scale(1.1);
+    opacity: 1;
+}
+>>>>>>> df4324f15c9d3b7d126df895406cea686cb0332d
