@@ -17,7 +17,7 @@ app.use(cookieParser());
 
 
 app.use(cors({
-    origin : "https://5173-idx-freelancergit-1740285434791.cluster-qpa6grkipzc64wfjrbr3hsdma2.cloudworkstations.dev",
+    origin : "http://localhost:5173",
     credentials : true
 }));
 
