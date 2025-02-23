@@ -31,7 +31,7 @@ function App() {
 
 
         <Route  path ="/job-create"  element={<JobPost/>}      />
-       <Route  path='/client/jobs/:id/proposal'  element = {<ClientProposal/>}  />
+       <Route  path='/jobs/:id/proposal'  element = {<ClientProposal/>}  />
         
         <Route   path='/jobs' element={<FetchJobList/>}     />
         <Route   path='/jobs/:id' element = {<JobDetails/>}    />
