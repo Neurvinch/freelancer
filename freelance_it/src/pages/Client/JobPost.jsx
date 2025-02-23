@@ -102,7 +102,7 @@ const JobPost = () => {
             onChange={(e) => setTags(e.target.value)}
           />
 
-          <button type="submit" className="submit-button">
+          <button type="submit"  className="login-button">
             Create Job
           </button>
         </form>

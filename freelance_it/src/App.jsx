@@ -29,9 +29,8 @@ function App() {
 
 
 
-        <Route  path ="/jobs-create"  element={<JobPost/>}      />
+        <Route  path ="/job-create"  element={<JobPost/>}      />
         <Route   path='/jobs/:id' element = {<JobDetails/>}    />
-        
 
 
         <Route   path='/jobs' element={<FetchJobList/>}     />

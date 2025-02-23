@@ -51,10 +51,6 @@ const Profile = () => {
 
   return (
     <div className="profile-page">
-    {/* Background Images */}
-    <img src="/imagef6.png" alt="Top Left" className="bg-image-top-left" />
-    <img src="/imagef7.png" alt="Bottom Right" className="bg-image-bottom-right" />
-
     <div className="profile-containerrr">
         <h1 className="profile-title">Profile</h1>
         <img src={profile.image} alt="Profile" className="profile-image" />

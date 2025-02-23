@@ -1,0 +1,65 @@
+.proposal-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    margin: auto;
+    color: #ffffff;
+}
+
+.proposal-form-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.proposal-form-container h1 {
+    font-size: 32px;
+    color: #ff9320;
+}
+
+.proposal-form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.proposal-form-container label {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: start;
+    font-size: medium;
+}
+
+.proposal-form-container textarea,
+.proposal-form-container input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.proposal-image img {
+    width: 300px; /* Adjust size */
+    height: auto;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .proposal-container {
+        width: 100%;
+        flex-direction: column; /* Stack items vertically */
+        text-align: center;
+    }
+
+    .proposal-image img {
+        width: 300px;
+        height: auto; /* Reduce image size */
+        margin-top: 15px;
+    }
+}

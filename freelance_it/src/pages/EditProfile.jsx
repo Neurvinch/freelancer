@@ -1,48 +1,78 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
-import './EditProfile.css'
-const EditProfile = () => {
-    const [formData , setFormData] = useState({
-        _id : "",
-        name : "",
-        email : "",
-        profile : {
-            bio : "",
-            skills : "",
-            portfolioLinks : "",
-            GithubLinks : "",
-        }
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import '../assets/left.png'; // Importing image
+import './FetchJobList.css';
 
-    });
+const FetchJobList = () => {
+    const [jobs, setJobs] = useState([]);
+    const [filter, setFilter] = useState('');
+    const [search, setSearch] = useState('');
+    const [sort, setSort] = useState('budget');
 
-    const navigate = useNavigate();
+    useEffect(() => {
+        axios.get(`http://localhost:5000/api/jobs?filter=${filter}&sort=${sort}`)
+            .then((res) => setJobs(res.data.jobs))
+            .catch((err) => console.log(err));
+    }, [filter, sort]);
 
-    const [loading , setLoading] = useState(true);
-    const [error , setError] = useState("");
-    
-     
-       useEffect( () => {
-               const fetchProfile = async() =>{
-                try {
+    return (
+        <div className="job-container">
+            {/* Job Heading */}
+            <h2 className="job-heading">Available Jobs</h2>
 
-                     const token = localStorage.getItem('token');
-                      
-                     if(!token) {
-                        setError("Please login first");
-                     }
+            {/* Filter Input */}
+            <div className="input-wrapper">
+                <input
+                    type="text"
+                    className="animated-input"
+                    placeholder=" "
+                    value={filter}
+                    onChange={(e) => setFilter(e.target.value)}
+                />
+                <label>Filter by Category</label>
+            </div>
 
+            {/* Search Input */}
+            <div className="input-wrapper">
+                <input
+                    type="text"
+                    className="animated-input"
+                    placeholder=" "
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                />
+                <label>Search Jobs</label>
+            </div>
 
+            {/* Sort Dropdown */}
+            <div className="input-wrapper">
+                <select
+                    className="animated-select black-select"
+                    value={sort}
+                    onChange={(e) => setSort(e.target.value)}
+                >
+                    <option value="budget">Sort by Budget</option>
+                    <option value="createdAt">Sort by Date</option>
+                </select>
+            </div>
 
-                    const res = await axios.get('http://localhost:5000/api/profile' ,
-                        {
-                            headers : {
-                                'Authorization' : `Bearer ${token}`
-                        },
-                        withCredentials : true
+            {/* Job List */}
+            <ul className="job-list">
+                {jobs.map((job) => (
+                    <li key={job._id} className="job-item">
+                        <Link to={`/jobs/${job._id}`} className="job-link">
+                            {job.title} - <span className="job-budget">${job.budget}</span> ({job.status})
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+};
 
                              
-                        })
+                      
 
                         const profileData = res.data.profile;
 
@@ -156,9 +186,6 @@ const EditProfile = () => {
 
   return (
     <div className="profile-page">
-  {/* Background Images */}
-  <img src="/imagef6.png" alt="Top Left" className="bg-image-top-left" />
-  <img src="/imagef7.png" alt="Bottom Right" className="bg-image-bottom-right" />
 
   <div className="profile-container">
     <h1>Edit Profile</h1>
