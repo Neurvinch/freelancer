@@ -130,4 +130,5 @@ const HomePage = () => {
   );
 };
 
+{/* Bouncing Register Button */}
 export default HomePage;
