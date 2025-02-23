@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect , useState } from 'react'
 
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
@@ -9,7 +9,7 @@ const ClientProposal = () => {
            const [error , setError] = useState(null);
            
            useEffect( () => {
-                 try {
+                 
                     const fetchProposals = async () => {
                         const token = localStorage.getItem('token');
                         if(!token) {
@@ -22,17 +22,16 @@ const ClientProposal = () => {
                             },
                             withCredentials : true
                         });
-                        setProposals(response.data.proposal);
+                        setProposals(response.data.proposals);
                         setLoading(false);
 
                     }
                     
-                 } catch (error) {
-                     console.log(error);
-                     setError(error);
-                     setLoading(false);
-                    
-                 }
+                
+
+                 fetchProposals()
+                 
+                
            },[id])
 
            {loading && <p>Loading...</p>}
