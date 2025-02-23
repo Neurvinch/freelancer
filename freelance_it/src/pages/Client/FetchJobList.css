@@ -1,9 +1,12 @@
 /* Container */
 .job-list-container {
-    max-width: 600px;
-    margin: 30px auto;
+   
+    margin: 0px;
     padding: 20px;
-    background: #1e1e1e;
+    width: 380px;
+    max-width: 90%;
+    height: auto;
+    background: #212121;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     color: white;
@@ -12,7 +15,7 @@
 /* Title */
 .job-list-title {
     text-align: center;
-    color: #ffcc00;
+    color: #ffaa00;
     margin-bottom: 20px;
 }
 
@@ -35,7 +38,7 @@
 
 /* Select */
 .job-sort-select {
-    background: #ffcc00;
+    background: #ffa600;
     color: black;
     cursor: pointer;
 }
@@ -43,13 +46,15 @@
 /* Job List */
 .job-list {
     list-style: none;
-    padding: 0;
+    padding: 10px;
+    color: #212121;
 }
 
 /* Job Item */
 .job-item {
-    background: #2c2c2c;
-    padding: 10px;
+    background: #f89720;
+    font-size: 15px;
+    padding: 20px;
     margin-bottom: 10px;
     border-radius: 5px;
     transition: transform 0.2s ease-in-out;
@@ -58,8 +63,8 @@
 /* Hover Effect */
 .job-item:hover {
     transform: scale(1.05);
-    background: #ffcc00;
-    color: black;
+    background: #ff9900;
+    color: rgb(192, 187, 187);
 }
 
 /* Job Link */
@@ -71,5 +76,5 @@
 }
 
 .job-item:hover .job-link {
-    color: black;
+    color: rgb(255, 255, 255);
 }
