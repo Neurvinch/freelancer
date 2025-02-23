@@ -1,77 +1,46 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import '../assets/left.png'; // Importing image
-import './FetchJobList.css';
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+import './EditProfile.css'
+const EditProfile = () => {
+    const [formData , setFormData] = useState({
+        _id : "",
+        name : "",
+        email : "",
+        profile : {
+            bio : "",
+            skills : "",
+            portfolioLinks : "",
+            GithubLinks : "",
+        }
 
-const FetchJobList = () => {
-    const [jobs, setJobs] = useState([]);
-    const [filter, setFilter] = useState('');
-    const [search, setSearch] = useState('');
-    const [sort, setSort] = useState('budget');
+    });
 
-    useEffect(() => {
-        axios.get(`http://localhost:5000/api/jobs?filter=${filter}&sort=${sort}`)
-            .then((res) => setJobs(res.data.jobs))
-            .catch((err) => console.log(err));
-    }, [filter, sort]);
+    const navigate = useNavigate();
 
-    return (
-        <div className="job-container">
-            {/* Job Heading */}
-            <h2 className="job-heading">Available Jobs</h2>
+    const [loading , setLoading] = useState(true);
+    const [error , setError] = useState("");
+    
+     
+       useEffect( () => {
+               const fetchProfile = async() =>{
+                try {
 
-            {/* Filter Input */}
-            <div className="input-wrapper">
-                <input
-                    type="text"
-                    className="animated-input"
-                    placeholder=" "
-                    value={filter}
-                    onChange={(e) => setFilter(e.target.value)}
-                />
-                <label>Filter by Category</label>
-            </div>
+                     const token = localStorage.getItem('token');
+                      
+                     if(!token) {
+                        setError("Please login first");
+                     }
 
-            {/* Search Input */}
-            <div className="input-wrapper">
-                <input
-                    type="text"
-                    className="animated-input"
-                    placeholder=" "
-                    value={search}
-                    onChange={(e) => setSearch(e.target.value)}
-                />
-                <label>Search Jobs</label>
-            </div>
 
-            {/* Sort Dropdown */}
-            <div className="input-wrapper">
-                <select
-                    className="animated-select black-select"
-                    value={sort}
-                    onChange={(e) => setSort(e.target.value)}
-                >
-                    <option value="budget">Sort by Budget</option>
-                    <option value="createdAt">Sort by Date</option>
-                </select>
-            </div>
 
-            {/* Job List */}
-            <ul className="job-list">
-                {jobs.map((job) => (
-                    <li key={job._id} className="job-item">
-                        <Link to={`/jobs/${job._id}`} className="job-link">
-                            {job.title} - <span className="job-budget">${job.budget}</span> ({job.status})
-                        </Link>
-                    </li>
-                ))}
-            </ul>
-        </div>
-    );
-};
+                    const res = await axios.get('http://localhost:5000/api/profile' ,
+                        {
+                            headers : {
+                                'Authorization' : `Bearer ${token}`
+                        },
+                        withCredentials : true
 
-<<<<<<< HEAD
                              
                         })
 
@@ -268,6 +237,3 @@ const FetchJobList = () => {
 }
 
 export default EditProfile
-=======
-export default FetchJobList;
->>>>>>> df4324f15c9d3b7d126df895406cea686cb0332d

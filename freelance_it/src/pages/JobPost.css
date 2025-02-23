@@ -11,7 +11,6 @@
     background: #2c2c2c; /* Darker Background */
 }
 
-<<<<<<< HEAD
 /* Form Styling */
 .form-containerrr {
     background-color: #1a1a1a; /* Dark Gray */
@@ -19,7 +18,6 @@
     border-radius: 15px;
     box-shadow: rgba(97, 82, 69, 0.5) 0px 10px 30px;
     width: 400px;
-=======
 /* Job List Box */
 .job-list-box {
     background: #3b3b3b; /* Dark Gray */
@@ -27,7 +25,6 @@
     border-radius: 15px;
     box-shadow: rgba(255, 115, 0, 0.5) 0px 10px 30px;
     width: 450px;
->>>>>>> df4324f15c9d3b7d126df895406cea686cb0332d
     text-align: center;
     transition: transform 0.3s ease-in-out;
     position: relative;
@@ -63,21 +60,6 @@
     transform: scale(1.05);
 }
 
-<<<<<<< HEAD
-/* Error and Success Messages */
-.error-message {
-    color: red;
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
-.success-message {
-    color: #00ff6a;
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
-=======
 /* View Details Button */
 .view-button {
     width: 100%;
@@ -121,10 +103,4 @@
     opacity: 0.8;
     transition: transform 0.3s ease-in-out;
 }
-
-/* Hover Effect for Image */
-.bottom-right-image:hover {
-    transform: scale(1.1);
-    opacity: 1;
 }
->>>>>>> df4324f15c9d3b7d126df895406cea686cb0332d
