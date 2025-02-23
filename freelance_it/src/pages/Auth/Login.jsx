@@ -22,7 +22,7 @@ const Login = () => {
             if(res.data.success){
                 localStorage.setItem('token' , res.data.token)
                 setSucess(res.data.message)
-                navigate('/dashboard')
+                navigate('/jobs')
 
             } else{
                 setError(res.data.message)
