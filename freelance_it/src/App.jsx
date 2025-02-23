@@ -9,6 +9,7 @@ import EditProfile from './pages/EditProfile'
 import FetchJobList from './pages/FetchJobList'
 import JobDetails from './pages/JobDetails'
 import ProposalSubmit from './pages/ProposalSubmit'
+import ProposalList from './pages/ProposalList'
 
 function App() {
 
@@ -23,14 +24,11 @@ function App() {
         <Route path='/login' element = {<Login/>}     />
         <Route  path ="/job-create"  element={<JobPost/>}      />
         <Route  path='/profile'  element = {<Profile/>}  />
-<<<<<<< HEAD
         <Route   path='/editProfile' element = {<EditProfile/>}  />
         <Route   path='/jobs' element={<FetchJobList/>}     />
         <Route   path='/jobs/:id' element = {<JobDetails/>}    />
         <Route   path='/jobs/:jobId/proposal/new' element = {<ProposalSubmit/>}  />
-
-=======
->>>>>>> ce4d043a6f16c311d27bca644f99797fdcd168dd
+       <Route    path='/jobs/:jobId/proposal' element = {<ProposalList/>}  />
       </Routes>
     </Router>
       
