@@ -17,6 +17,7 @@ import Signout from './pages/Auth/Signout'
 import NavBar from './pages/NAvBar'
 import FreelancerJobDetails from './pages/Freelancer/FreelncerJobDetails'
 import FreelancerJobFetch from './pages/Freelancer/FreelancerJobFetch'
+import FreelancerPRoposalsview from './pages/Freelancer/FreelancerPRoposalsview'
 
 
 function AppContent() {
@@ -46,7 +47,7 @@ function AppContent() {
         <Route   path='/jobs/:id' element = {<JobDetails/>}    />
         <Route path ="/client/jobs" element ={<MyJobs/>}       />
         <Route    path='/jobs/:id/freelancer' element={<FreelancerJobDetails/>}      />
-
+        <Route   path='/proposals/my' element={<FreelancerPRoposalsview/>}       />
 
         <Route   path='/jobs' element={<FetchJobList/>}     />
 

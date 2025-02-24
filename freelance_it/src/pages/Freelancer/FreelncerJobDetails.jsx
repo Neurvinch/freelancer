@@ -44,6 +44,9 @@ const FreelancerJobDetails = () => {
     <Link to={`/jobs/${jobs._id}/proposal/new`} className="submit-proposal">
     Submit Proposal
   </Link>
+   <Link to={`/proposal/${jobs._id}/edit`}>
+       Edit Proposals
+   </Link>
 
   </div>
 

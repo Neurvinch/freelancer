@@ -146,3 +146,30 @@ exports.clientProposals = async (req, res) =>{
         })
     }
 }
+
+exports.getmyproposals = async(req,res) =>{
+      
+    try {
+        if(!req.user || !req.user.id){
+            return res.status(401).json({
+                success : false,
+                message : "You are not logged in"
+                })
+                }
+
+       const freelancerId = req.user.id;
+
+       const proposals = await ProposalModel.find({id : freelancerId}).populate("job" , "title description budget");
+       res.status(200).json({
+        success : true,
+        proposals
+        })
+       
+    } catch (error) {
+        res.status(500).json({
+            success : false,
+            message : error.message
+        })
+    
+    }
+}
