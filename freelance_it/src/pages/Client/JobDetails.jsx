@@ -99,10 +99,7 @@ const JobDetails = () => {
     </button>
   </div>
 
-  <Link to={`/jobs/${jobs._id}/proposal/new`} className="submit-proposal">
-    Submit Proposal
-  </Link>
-
+  
   <Link to={`/client/jobs/${jobs._id}/proposal`}> yours Job's proposals here </Link>
 </div>
 

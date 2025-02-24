@@ -15,6 +15,8 @@ import ClientProposal from './pages/Client/ClientProposal'
 import MyJobs from './pages/Client/MyJobs'
 import Signout from './pages/Auth/Signout'
 import NavBar from './pages/NAvBar'
+import FreelancerJobDetails from './pages/Freelancer/FreelncerJobDetails'
+import FreelancerJobFetch from './pages/Freelancer/FreelancerJobFetch'
 
 
 function AppContent() {
@@ -40,9 +42,10 @@ function AppContent() {
         <Route  path ="/job-create"  element={<JobPost/>}      />
        <Route  path='/client/jobs/:id/proposal'  element = {<ClientProposal/>}  />
         
-        <Route   path='/jobs' element={<FetchJobList/>}     />
+        <Route   path='/jobs' element={<FreelancerJobFetch/>}     />
         <Route   path='/jobs/:id' element = {<JobDetails/>}    />
         <Route path ="/client/jobs" element ={<MyJobs/>}       />
+        <Route    path='/jobs/:id/freelancer' element={<FreelancerJobDetails/>}      />
 
 
         <Route   path='/jobs' element={<FetchJobList/>}     />

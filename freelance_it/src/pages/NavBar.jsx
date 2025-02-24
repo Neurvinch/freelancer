@@ -29,7 +29,7 @@ const NavBar = () => {
   const handleSignout = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.get("/signout");
+      const res = await axios.get("http://localhost:5000/api/signout");
       if (res.data.success) {
         localStorage.removeItem("token");
         navigate("/login");
@@ -48,7 +48,7 @@ const NavBar = () => {
           <Link to="/jobs">Jobs</Link>
           <Link to="/client/jobs">My Jobs</Link>
           
-          <Link to="/signout" onClick={handleSignout}>
+          <Link to="/login" onClick={handleSignout}>
             Signout
           </Link>
         </>
@@ -58,7 +58,7 @@ const NavBar = () => {
         <>
           <Link to="/profile">Profile</Link>
           <Link to="/jobs">Jobs</Link>
-          <Link to="/jobs/:id/proposal">My Proposals</Link>
+          
           <Link to="/proposal/:id/edit">Edit Proposals</Link>
           <Link to="/signout" onClick={handleSignout}>
             Signout
