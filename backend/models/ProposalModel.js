@@ -4,7 +4,7 @@ const proposalSchema = new mongoose.Schema({
 
     job: {
         type : mongoose.Schema.Types.ObjectId,
-        ref : 'jobCreationModel',
+        ref : 'JobCreation',
         required : true
     },
 

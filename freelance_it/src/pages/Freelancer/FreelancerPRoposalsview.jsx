@@ -13,9 +13,9 @@ const FreelancerPRoposalsview = () => {
          const fetchdata = async () =>{
                  
             const token = localStorage.getItem('token')
-               
+               try{
 
-             await axios.get('http://localhost:5000/api/proposals/my',
+             const res = await axios.get('http://localhost:5000/api/proposals/my',
                 {
                     headers: {
                         'Authorization': `Bearer ${token}`
@@ -23,17 +23,13 @@ const FreelancerPRoposalsview = () => {
                         withCredentials: true
                 }
              )
-
-             .then(res =>{
-                setProposals(res.data.proposals)
-                setLoading(false)
-             })
-             .catch(err =>{
-                setError(true)
-                setLoading(false)
-                })
-
-
+            setProposals(res.data.proposals);
+            setLoading(false);
+        
+              } catch (error) {
+                setError(true);
+                setLoading(false);
+              }
 
          }
 
@@ -55,12 +51,12 @@ const FreelancerPRoposalsview = () => {
                 <li key={prop._id}>
                     <p>
                              <strong>Job:</strong>
-                             {prop.job.title} || "N/A"
+                             {prop.job.title} 
 
                     </p>
                     <p>
                         <strong>ProposedAmount:</strong>
-                        {prop.proposedAmount} || "N/A"
+                        {prop.proposalAmount} 
                     </p>
                     <p>
                         {prop.proposalText}

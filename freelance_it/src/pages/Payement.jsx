@@ -22,7 +22,7 @@ const Payement = () => {
                 const {order} = data;
 
                 const options ={
-                    key : process.env.VITE_RAZORPAY_KEY_ID,
+                    key : import.meta.env.VITE_RAZORPAY_KEY_ID,
                     amount : order.amount,
                     currency :order.currency,
                     name : "freelance_it",

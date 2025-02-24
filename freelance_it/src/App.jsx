@@ -57,7 +57,7 @@ function AppContent() {
        <Route    path='/jobs/:jobId/proposal' element = {<ProposalList/>}  />
        <Route    path='/proposal/:id/edit' element = {<ProposalEdit/>} />
 
-       <Route path='/payement' element={<Payement/>}/>
+       <Route path='/payment' element={<Payement/>}/>
       </Routes>
    
       

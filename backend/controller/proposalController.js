@@ -157,9 +157,13 @@ exports.getmyproposals = async(req,res) =>{
                 })
                 }
 
-       const freelancerId = req.user.id;
+       const freelancerId = req.user.id || req.user._id;
+       console.log(freelancerId);
 
-       const proposals = await ProposalModel.find({id : freelancerId}).populate("job" , "title description budget");
+       const proposals = await ProposalModel.find({freelancer : freelancerId}).populate("job" , "title description budget");
+       
+       console.log(proposals);
+
        res.status(200).json({
         success : true,
         proposals
