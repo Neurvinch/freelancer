@@ -10,7 +10,7 @@ const Chatbot = () => {
     const [isLoading, setIsLoading] = useState(false);
 
     const generateResponse = async (prompt) => {
-        const response = await fetch(${API_URL}?key=${API_KEY}, {
+        const response = await fetch(`${API_URL}?key=${API_KEY}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -63,23 +63,23 @@ const Chatbot = () => {
     };
 
     return (
+        <>
         <div className="chat-container">
             <div className="chat-header">
                 <h1>Chatbot</h1>
             </div>
             <div className="chat-messages">
                 {messages.map((msg, index) => (
-                    <div key={index} className={message ${msg.isUser ? 'user-message' : 'bot-message'}}>
-                        <img
-                            className="profile-image"
-                            src={msg.isUser ? 'user.jpg' : 'bot.jpg'}
-                            alt={msg.isUser ? 'User' : 'Bot'}
-                        />
-                        <div className="message-content">{msg.text}</div>
-                    </div>
-                ))}
-            </div>
-            <div className="chat-input-container">
+                <div key={index} className={msg.isUser ? 'user-message' : 'bot-message'}>
+                    <img
+                        className="profile-image"
+                        src={msg.isUser ? 'user.jpg' : 'bot.jpg'}
+                        alt={msg.isUser ? 'User' : 'Bot'} />
+                    <div className="message-content">{msg.text}</div>
+                </div>
+            ))}
+        </div>
+        <div className="chat-input-container">
                 <input
                     type="text"
                     value={userInput}
@@ -89,13 +89,13 @@ const Chatbot = () => {
                             e.preventDefault();
                             handleUserInput();
                         }
-                    }}
+                    } }
                     placeholder="Type your message..."
-                    disabled={isLoading}
-                />
+                    disabled={isLoading} />
                 <button onClick={handleUserInput} disabled={isLoading}>Send</button>
             </div>
-        </div>
+            </div>
+        </>
     );
 };
 

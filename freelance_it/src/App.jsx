@@ -19,6 +19,9 @@ import FreelancerJobDetails from './pages/Freelancer/FreelncerJobDetails'
 import FreelancerJobFetch from './pages/Freelancer/FreelancerJobFetch'
 import FreelancerPRoposalsview from './pages/Freelancer/FreelancerPRoposalsview'
 import Payement from './pages/Payement'
+import  Chatbot from './pages/Chatbot'
+  
+
 
 
 function AppContent() {
@@ -58,6 +61,8 @@ function AppContent() {
        <Route    path='/proposal/:id/edit' element = {<ProposalEdit/>} />
 
        <Route path='/payment' element={<Payement/>}/>
+
+       <Route  path='/chat' element={<Chatbot/>}   />
       </Routes>
    
       
