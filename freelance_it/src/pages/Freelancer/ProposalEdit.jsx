@@ -44,7 +44,7 @@ const ProposalEdit = () => {
       };
       await axios.put(`http://localhost:5000/api/proposal/${id}`, payload, {
         headers: {
-          Authorization: `Bearer ${token}`,
+          'Authorization': `Bearer ${token}`,
         },
         withCredentials: true,
       });
