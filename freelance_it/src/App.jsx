@@ -18,6 +18,7 @@ import NavBar from './pages/NAvBar'
 import FreelancerJobDetails from './pages/Freelancer/FreelncerJobDetails'
 import FreelancerJobFetch from './pages/Freelancer/FreelancerJobFetch'
 import FreelancerPRoposalsview from './pages/Freelancer/FreelancerPRoposalsview'
+import Payement from './pages/Payement'
 
 
 function AppContent() {
@@ -55,6 +56,8 @@ function AppContent() {
         <Route   path='/jobs/:jobId/proposal/new' element = {<ProposalSubmit/>}  />
        <Route    path='/jobs/:jobId/proposal' element = {<ProposalList/>}  />
        <Route    path='/proposal/:id/edit' element = {<ProposalEdit/>} />
+
+       <Route path='/payement' element={<Payement/>}/>
       </Routes>
    
       
